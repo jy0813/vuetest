@@ -1,0 +1,47 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------
+파일정의 : Settings
+작성날짜 : 2021-08-18 김상수
+분류순서 : 기본정책 > 유틸리티 > 사용자정의(컬러, 폰트, 보더, 간격 등)
+속성순서 : 표시 > 위치 > 넘침/흐름 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
+-------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+## Base
+-------------------------------------------------------------------*/
+
+html, body, div, form, ul, ol, dl, li, dt, dd, p, h1, h2, h3, h4, h5, h6, table, th, td, caption, address, article, aside,
+canvas, details, figure, figcaption, footer, header, menu, nav, section,pre,
+button, select, textarea, input, fieldset, legend, a, span, strong, em, address, dfn, small, i, b {margin:0; padding:0; border:0; list-style:none; font-style:normal; font-size:100%; font-weight:inherit; font-family: 'Noto Sans KR', sans-serif; line-height:inherit; word-break:inherit; word-wrap:inherit; box-sizing:inherit; -webkit-box-sizing:inherit; -moz-box-sizing:inherit; -o-box-sizing:inherit;}
+:before, :after {box-sizing:inherit; -webkit-box-sizing:inherit; -moz-box-sizing:inherit; -o-box-sizing:inherit;}
+article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {display:block;}
+body {font-size:14px; line-height:1; word-break:keep-all; word-wrap:break-word; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;}
+html[lang=ja] body, html[lang=zh] body {word-break:normal;}
+[hidden], hr {display:none;}
+img {vertical-align:middle; width:100%}
+button {background-color:transparent; cursor:pointer;}
+b, strong {font-weight:normal;}
+fieldset, iframe {width:100%;}
+img, a, frame, iframe, fieldset {border:0;}
+a {text-decoration:none; display:inline-block; color: #FFF;}
+table {width:100%; border-spacing:0; border-collapse:collapse;}
+caption {display:block; position:absolute; left:-9999px;}
+legend {position:absolute; left:-9999em; top:-9999em;}
+input {background: transparent;}
+button {overflow:hidden; background-color:transparent; cursor:pointer;}
+button::-moz-focus-inner {border:0px; padding:0px;}
+select {outline: none}
+a,button,input, textarea {outline: none;}
+a:focus,button:focus,input:focus, select:focus, textarea:focus {outline: none;}
+
+/*-------------------------------------------------------------------
+## General
+-------------------------------------------------------------------*/
+/* IR */
+.is_hide {display: none;}
+.is_show {display: block;}
+.hide_wrap {position: relative;}
+.hide_area {position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0;}
+
+/* Page Scroll */
+.is_scrollFix {overflow: hidden}
