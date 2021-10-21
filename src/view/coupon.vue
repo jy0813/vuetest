@@ -6,44 +6,23 @@
         <img src="@/assets/img/ic_close.png" alt="">
       </div>
       <div class="coupon_body">
-        <div class="use_coupon_wrap">
-          <h3>최대 혜택 쿠폰</h3>
+        <div class="use_coupon_wrap" v-for="(item, i) in coupon" :key="'coupon' + i">
+          <h3>{{item.title}}</h3>
           <div class="coupon_area">
-            <div class="txt_area">
-              <div class="scroll">
-                <p class="discount"><em>100,000원</em> 할인</p>
-                <p class="category">일룸 주방가전 특가</p>
-                <p class="condition">10만원 이상 결제 시 최대 50만원 사용 가능</p>
-                <p class="date">발급일로부터 7일간 유효</p>
+            <div class="txt_wrap">
+              <div class="txt_area">
+                <div class="scroll">
+                  <p class="discount"><em>{{item.discount}}</em> 할인</p>
+                  <p class="category">{{item.category}}</p>
+                  <p class="condition">{{item.condition}}</p>
+                  <p class="date">{{item.date}}</p>
+                </div>
               </div>
             </div>
-            <div class="btn_area">
-              <img src="@/assets/img/ic_download.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="use_coupon_wrap">
-          <h3>이 상품에 적용 가능한 다른 쿠폰</h3>
-          <div class="coupon_area">
-            <div class="txt_area">
-              <p class="discount"><em>20%</em> 할인</p>
-              <p class="category">지인몰 봄맞이 가구 대축제</p>
-              <p class="condition">10만원 이상 결제 시 최대 50만원 사용 가능</p>
-              <p class="date">2021.06.01 ~ 2021.06.30</p>
-            </div>
-            <div class="btn_area">
-              <img src="@/assets/img/ic_download.png" alt="">
-            </div>
-          </div>
-          <div class="coupon_area">
-            <div class="txt_area">
-              <p class="discount"><em>5%</em> 할인</p>
-              <p class="category">지인몰 첫 구매 혜택</p>
-              <p class="condition">지인몰 첫 구매 시 최대 5만원 사용 가능</p>
-              <p class="date">발급일로부터 7일간 유효</p>
-            </div>
-            <div class="btn_area">
-              <img src="@/assets/img/ic_download.png" alt="">
+            <div class="btn_wrap">
+              <div class="btn_area">
+                <img src="@/assets/img/ic_download.png" alt="">
+              </div>
             </div>
           </div>
         </div>
@@ -65,7 +44,33 @@
 
 <script>
 export default {
-  name: "coupon"
+  name: "coupon",
+  data() {
+    return {
+      coupon:[
+        {
+          title:'최대 혜택 쿠폰',
+          discount:'100,000',
+          category:'일룸 주방가전 특가',
+          condition:'10만원 이상 결제 시 최대 50만원 사용 가능',
+          date:'발급일로부터 7일간 유효',
+        },
+        {
+          title:'이 상품에 적용 가능한 다른 쿠폰',
+          discount:'20%',
+          category:'지인몰 봄맞이 가구 대축제',
+          condition:'10만원 이상 결제 시 최대 50만원 사용 가능',
+          date:'2021.06.01 ~ 2021.06.30',
+        },
+        {
+          discount:'5%',
+          category:'지인몰 첫 구매 혜택',
+          condition:'지인몰 첫 구매 시 최대 5만원 사용 가능',
+          date:'발급일로부터 7일간 유효',
+        },
+      ],
+    }
+  }
 }
 </script>
 
@@ -115,21 +120,53 @@ export default {
   width: 100%;
   height: 100%;
   min-height: 110px;
-  border: 1px solid #E2E2E2;
 }
 
-.coupon_area .txt_area {
-  display: table-cell;
-  vertical-align: middle;
+.coupon_body .coupon_area .txt_wrap {
+  position: relative;
   width: 81.25%;
+  height: 100%;
+  background-color: #EDEDED;
+  border-right: 1px dashed #9B795A;
+  clip-path: polygon(0 0, 97.5% 0, 100% 5%, 100% 95%, 97.5% 100%, 0 100%, 0% 80%, 0% 20%);
+  display: table-cell;
+}
+
+.coupon_body .coupon_area .txt_wrap .txt_area {
+  position: absolute;
+  white-space: nowrap;
+  overflow-y: hidden;
+  top: 1px;
+  right: 1px;
+  left: 1px;
+  bottom: 1px;
+  vertical-align: middle;
   padding: 13px 15px;
   background-color: #fff;
+  clip-path: polygon(0 0, 97.5% 0, 100% 5%, 100% 95%, 97.5% 100%, 0 100%, 0% 80%, 0% 20%);
+
+}
+
+.coupon_body .coupon_area .btn_wrap {
+  width: 18.75%;
+  height: 100%;
+  display: table-cell;
+  clip-path: polygon(10% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 10% 100%, 0 95%, 0 5%);
+}
+
+.coupon_area .btn_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 13px 15px;
+  background-color: #B49277;
 }
 
 .coupon_area .txt_area .scroll {
-  padding: 0 20px 0 0;
-  white-space: nowrap;
-  overflow-y: hidden;
+  padding-right: 20px;
+  background-color: #fff;
+  display: table-cell;
 }
 
 .coupon_area .txt_area .discount {
@@ -165,11 +202,9 @@ export default {
 }
 
 .coupon_area .btn_area {
-  display: table-cell;
   text-align: center;
   vertical-align: middle;
   padding: 13px 15px;
-  width: 18.75%;
   background-color: #B49277;
 }
 
