@@ -181,21 +181,21 @@ export default {
 }
 
 .coupon_area .txt_area .category {
-  margin-top: 4px;
+  margin-top: 8px;
   font-size: 13px;
   font-weight: 500;
   color: #212121;
 }
 
 .coupon_area .txt_area .condition {
-  margin-top: 4px;
+  margin-top: 10px;
   font-size: 11px;
   font-weight: 400;
   color: #7C7C7C;
 }
 
 .coupon_area .txt_area .date {
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 11px;
   font-weight: 400;
   color: #7C7C7C;
