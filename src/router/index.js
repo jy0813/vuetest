@@ -4,7 +4,8 @@ import Index from '@/view/index';
 import Text from '@/view/text';
 import GNB from '@/view/gnb'
 import Animation from '@/view/animation';
-import Coupon from '@/view/coupon'
+import Coupon from '@/view/coupon';
+import Count from '@/view/count';
 
 Vue.use(VueRouter);
 
@@ -34,7 +35,12 @@ const router = new VueRouter({
     {
       path:'/coupon',
       name:'coupon',
-      component: Coupon,
+      component: Coupon
+    },
+    {
+      path:'/count',
+      name:'count',
+      component: Count,
     },
   ]
 });
